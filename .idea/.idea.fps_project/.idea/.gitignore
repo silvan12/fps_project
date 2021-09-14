@@ -1,0 +1,13 @@
+﻿# Default ignored files
+/shelf/
+/workspace.xml
+# Rider ignored files
+/projectSettingsUpdater.xml
+/contentModel.xml
+/.idea.fps_project.iml
+/modules.xml
+# Datasource local storage ignored files
+/../../../../../../../../../:\Documenten\Programming\C#\NEW\fps_project\.idea\.idea.fps_project\.idea/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/
