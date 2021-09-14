@@ -35,17 +35,14 @@ public class MouseLook : MonoBehaviour
 
         // If mouse clicked (activates only once while mouse held down)
         // 0 for mouse1
-        if (Input.GetMouseButtonDown(0))
+        // and raycast hits something in range
+        if (Input.GetMouseButtonDown(0) && Physics.Raycast(ray, out hitData, hitRange))
         {
-            // If raycast hits something in range hitRange
-            if (Physics.Raycast(ray, out hitData, hitRange))
+            // If tag has "Push"
+            if (hitData.transform.CompareTag("Push"))
             {
-                // If tag has "Push"
-                if (hitData.transform.CompareTag("Push"))
-                {
-                    // Debug.DrawRay(ray.origin, ray.direction * 10);
-                    hitData.rigidbody.AddForce(transform.forward * hitPower);
-                }
+                // Debug.DrawRay(ray.origin, ray.direction * 10);
+                hitData.rigidbody.AddForce(transform.forward * hitPower);
             }
         }
 
