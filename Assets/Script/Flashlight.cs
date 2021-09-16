@@ -1,6 +1,7 @@
 using UnityEngine;
+using MLAPI;
 
-public class Flashlight : MonoBehaviour
+public class Flashlight : NetworkBehaviour
 {
     public Light flashlight;
     public Light playerLight;
@@ -10,13 +11,19 @@ public class Flashlight : MonoBehaviour
 
     void Start()
     {
-        flashlight.enabled = false;
-        playerLight.enabled = false;
+        if (IsLocalPlayer)
+        {
+            flashlight.enabled = true;
+            playerLight.enabled = true;
+        }
     }
 
     void Update()
     {
-        Toggle();
+        if (IsLocalPlayer)
+        {
+            Toggle();
+        }
     }
 
     void Toggle()

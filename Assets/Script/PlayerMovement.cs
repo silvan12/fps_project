@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
-
-public class PlayerMovement : MonoBehaviour
+using MLAPI;
+public class PlayerMovement : NetworkBehaviour
 {
     public CharacterController controller;
 
@@ -22,13 +22,21 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        if (!IsLocalPlayer)
+        {
+            playerCamera.GetComponent<AudioListener>().enabled = false;
+            playerCamera.GetComponent<Camera>().enabled = false;
+        }
     }
 
     void Update()
     {
-        Move();
-        Jump();
-        Look();
+        if (IsLocalPlayer)
+        {
+            Move();
+            Jump();
+            Look();
+        }
     }
 
     void Move()
