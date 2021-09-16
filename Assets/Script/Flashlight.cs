@@ -1,22 +1,25 @@
 using UnityEngine;
-using System.Collections;
-using UnityEditor.IMGUI.Controls;
 
-public class flashlightToggle : MonoBehaviour
+public class Flashlight : MonoBehaviour
 {
     public Light flashlight;
     public Light playerLight;
     public AudioSource source;
+
     public AudioClip sound;
-    
-    
-    private void Start()
+
+    void Start()
     {
         flashlight.enabled = false;
         playerLight.enabled = false;
     }
 
     void Update()
+    {
+        Toggle();
+    }
+
+    void Toggle()
     {
         if (Input.GetKeyDown(KeyCode.F))
         {
