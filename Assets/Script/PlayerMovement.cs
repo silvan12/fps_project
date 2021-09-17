@@ -7,7 +7,7 @@ public class PlayerMovement : NetworkBehaviour
     public float moveSpeed = 12f; // Movement speed
     public float jumpHeight = 3f; // Jump height
     public float gravity = -20f; // Gravity
-    public float mouseSens = 100f;
+    public float mouseSens = 1f;
 
     public Transform groundCheck; // Small cube below playermodel 
     public LayerMask groundMask;  // ground mask
@@ -69,8 +69,8 @@ public class PlayerMovement : NetworkBehaviour
 
     void Look()
     {
-        float mouseX = Input.GetAxis("Mouse X") * mouseSens * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSens * Time.deltaTime;
+        float mouseX = Input.GetAxis("Mouse X") * mouseSens;
+        float mouseY = Input.GetAxis("Mouse Y") * mouseSens;
         _xRotation -= mouseY;
         _xRotation = Mathf.Clamp(_xRotation, -90f, 90f);
         

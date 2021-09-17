@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 4362854023799188822}
   - component: {fileID: 4362854023799188821}
   - component: {fileID: 4362854023799188823}
-  - component: {fileID: 4362854023799188808}
-  - component: {fileID: 6357242535018431177}
-  - component: {fileID: 2829011433497636544}
   - component: {fileID: 8056257762419558363}
+  - component: {fileID: 6357242535018431177}
+  - component: {fileID: 3126366393983137217}
+  - component: {fileID: 2829011433497636544}
   m_Layer: 0
   m_Name: player
   m_TagString: Untagged
@@ -73,14 +73,14 @@ MonoBehaviour:
   moveSpeed: 8
   jumpHeight: 3
   gravity: -20
-  mouseSens: 100
+  mouseSens: 1
   groundCheck: {fileID: 4362854025434053282}
   groundMask:
     serializedVersion: 2
     m_Bits: 256
   playerBody: {fileID: 4362854023799188822}
   playerCamera: {fileID: 4362854025689824139}
---- !u!114 &4362854023799188808
+--- !u!114 &8056257762419558363
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -89,14 +89,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 4362854023799188820}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Script: {fileID: 11500000, guid: edaf6f7a884272c4c80e94f3657e62a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NetworkInstanceId: 0
-  PrefabHash: 15714336265186944586
-  PrefabHashGenerator: player
-  AlwaysReplicateAsRoot: 0
-  DontDestroyWithOwner: 0
+  flashlight: {fileID: 4362854024252449493}
+  playerLight: {fileID: 4362854025120761346}
+  source: {fileID: 2829011433497636544}
+  sound: {fileID: 8300000, guid: 96af9f86cce3a174ca69460a8f27137f, type: 3}
 --- !u!114 &6357242535018431177
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -145,6 +144,23 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &3126366393983137217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4362854023799188820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NetworkInstanceId: 0
+  PrefabHash: 15714336265186944586
+  PrefabHashGenerator: player
+  AlwaysReplicateAsRoot: 0
+  DontDestroyWithOwner: 0
 --- !u!82 &2829011433497636544
 AudioSource:
   m_ObjectHideFlags: 0
@@ -241,22 +257,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &8056257762419558363
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4362854023799188820}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: edaf6f7a884272c4c80e94f3657e62a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  flashlight: {fileID: 4362854024252449493}
-  playerLight: {fileID: 4362854025120761346}
-  source: {fileID: 2829011433497636544}
-  sound: {fileID: 8300000, guid: 96af9f86cce3a174ca69460a8f27137f, type: 3}
 --- !u!1 &4362854024252449491
 GameObject:
   m_ObjectHideFlags: 0
